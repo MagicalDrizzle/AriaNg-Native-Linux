@@ -1,0 +1,84 @@
+{
+    "appId": "net.mayswind.ariang",
+    "productName": "AriaNg Native",
+    "copyright": "Copyright (c) 2017-2022 MaysWind (i@mayswind.net)",
+    "artifactName": "AriaNg_Native-${version}-Linux.${ext}",
+    "files": [
+        "!build.json",
+        "!node_modules",
+        {
+            "from": "dist",
+            "to": "",
+            "filter": [
+                "build.json"
+            ]
+        },
+        {
+            "from": "dist/node_modules",
+            "to": "node_modules",
+            "filter": [
+                "**/*.js",
+                "**/*.cjs",
+                "**/*.json",
+                "**/*.css",
+                "**/*.woff",
+                "**/*.woff2",
+                "**/*.svg",
+                "**/*.eot",
+                "**/*.ttf"
+            ]
+        },
+        "app/**",
+        "assets/**",
+        "main/**",
+        "package.json"
+    ],
+    "linux": {
+        "executableName": "ariang",
+        "icon": "assets/AriaNg.png",
+        "category": "FileTransfer",
+        "packageCategory": "FileTransfer",
+        "executableArgs": [
+            "--no-sandbox"
+        ],
+        "mimeTypes": [
+            "application/x-bittorrent",
+            "application/metalink4+xml",
+            "application/metalink+xml",
+            "x-scheme-handler/magnet"
+        ],
+        "desktop": {
+            "StartupWMClass": "ariang",
+            "Categories": "Network;FileTransfer;",
+            "Keywords": "downloader;filetransfer;download files;download manager;aria2;ariang;",
+            "X-KDE-Protocols": "ftp,http,https",
+            "Terminal": "false"
+        },
+        "target": [
+            {
+                "target": "tar.gz",
+                "arch": [
+                    "x64"
+                ]
+            },
+            {
+                "target": "AppImage",
+                "arch": [
+                    "x64"
+                ]
+            },
+            {
+                "target": "deb",
+                "arch": [
+                    "x64"
+                ]
+            },
+            {
+                "target": "rpm",
+                "arch": [
+                    "x64"
+                ]
+            }
+        ]
+    }
+}
